@@ -86,12 +86,12 @@ export default function Pokemon() {
                 ) : null}
               </ul>
               <div className="card-body text-center">
-                <button className="btn btn-primary">
+                <button className="btn btn-warning">
                   <Link
                     to="/pokemones"
-                    className="text-white text-decoration-none"
+                    className="text-black text-decoration-none"
                   >
-                    Volver a Elegir Pokémon
+                    Volver
                   </Link>
                 </button>
               </div>
