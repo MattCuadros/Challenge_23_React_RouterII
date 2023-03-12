@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import Swal from 'sweetalert2'
-
+import Swal from "sweetalert2";
 
 export default function Pokemon() {
   const [result, setResult] = useState({});
-  const navigate=useNavigate();
+  const navigate = useNavigate();
 
   const params = useParams();
 
@@ -18,13 +17,13 @@ export default function Pokemon() {
       setResult(data);
     } catch (error) {
       Swal.fire({
-        title: 'Error!',
-        text: 'Debe seleccionar un Pokémon',
-        icon: 'error',
-        confirmButtonText: 'Volver al Home'
+        title: "Error!",
+        text: "Debe seleccionar un Pokémon",
+        icon: "error",
+        confirmButtonText: "Volver al Home",
       });
       navigate("/");
-    } 
+    }
   };
 
   useEffect(() => {
