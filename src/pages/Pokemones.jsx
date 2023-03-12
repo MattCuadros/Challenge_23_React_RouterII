@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
 
 export default function Pokemones() {
   const [list, setList] = useState([]);
   const [select,setSelect]=useState();
+  const navigate=useNavigate();
 
   const getData = async () => {
     try {
@@ -11,6 +13,14 @@ export default function Pokemones() {
       const data = await response.json();
       setList(data.results);
     } catch (error) {
+      Swal.fire({
+        title: 'Error!',
+        text: 'La Api no está disponible en este momento, favor inténtalo más tarde',
+        icon: 'error',
+        confirmButtonText: 'Volver al Home'
+      })
+      navigate("/");
+      
     } finally {
     }
   };
@@ -21,6 +31,13 @@ export default function Pokemones() {
 
   const handleSelect=(e)=>{
     setSelect(e.target.value);
+  }
+
+  const handleClick=()=>{
+    if(select===""){
+      
+    }
+
   }
 
   return (
@@ -40,7 +57,7 @@ export default function Pokemones() {
             );
           })}
         </select>
-        <button className="btn btn-secondary "><Link to={`/pokemones/${select}`} className="text-white text-decoration-none">Ver Detalles</Link></button>
+        <button className="btn btn-secondary " onClick={handleClick}><Link to={`/pokemones/${select}`} className="text-white text-decoration-none">Ver Detalles</Link></button>
       </div>
     </>
   );

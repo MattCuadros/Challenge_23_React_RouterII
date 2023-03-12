@@ -10,7 +10,7 @@ The Developing dependencies are Vite, React-Router-Dom, SweetAlert2, NPM and Boo
 
 
 
-You can view the Deployed Page on GitHub-Pages in this <a href="https://vermillion-dango-5ab206.netlify.app" target="_blank">Link</a>
+You can view the Deployed Page on GitHub-Pages in this <a href="https://jocular-phoenix-a43343.netlify.app/" target="_blank">Link</a>
 
 
 
